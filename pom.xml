@@ -7,11 +7,11 @@
 		<version>2.4.2</version>
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.testo</groupId>
-	<artifactId>url-shortener</artifactId>
+	<groupId>com.saama</groupId>
+	<artifactId>auth-module</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>url-shortener</name>
-	<description>Testo Url Shortener</description>
+	<name>auth-module</name>
+	<description>Saama Auth Module</description>
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -38,7 +38,7 @@
 		<dependency>
 			<groupId>com.h2database</groupId>
 			<artifactId>h2</artifactId>
-			<scope>runtime</scope>
+			<version>1.4.196</version>
 		</dependency>
 		<dependency>
 			<groupId>commons-validator</groupId>
@@ -49,7 +49,19 @@
 			<groupId>org.apache.commons</groupId>
 			<artifactId>commons-lang3</artifactId>
 		</dependency>
-
+		<dependency>
+			<groupId>org.liquibase</groupId>
+			<artifactId>liquibase-core</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.liquibase</groupId>
+			<artifactId>liquibase-maven-plugin</artifactId>
+			<version>3.6.3</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-security</artifactId>
+		</dependency>
 	</dependencies>
 
 	<build>

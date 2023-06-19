@@ -1,0 +1,32 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog
+	xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+	xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+	xmlns:pro="http://www.liquibase.org/xml/ns/pro"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+		http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+		http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd
+		http://www.liquibase.org/xml/ns/pro http://www.liquibase.org/xml/ns/pro/liquibase-pro-latest.xsd">
+	<changeSet author="manjuv" id="user-insert">
+		<sqlFile encoding="utf8" endDelimiter=";"
+			path="/db/changelog/user-insert.sql" dbms="h2" />
+	</changeSet>
+	<changeSet author="manjuv" id="privilege-insert">
+		<sqlFile encoding="utf8" endDelimiter=";"
+			path="/db/changelog/privilege-insert.sql" dbms="h2" />
+	</changeSet>
+	<changeSet author="manjuv" id="roles-insert">
+		<sqlFile encoding="utf8" endDelimiter=";"
+			path="/db/changelog/roles-insert.sql" dbms="h2" />
+	</changeSet>
+	<changeSet author="manjuv" id="user-privilege-insert">
+		<sqlFile encoding="utf8" endDelimiter=";"
+			path="/db/changelog/user-privilege-insert.sql" dbms="h2" />
+	</changeSet>
+	<changeSet author="manjuv" id="role-privilege-insert">
+		<sqlFile encoding="utf8" endDelimiter=";"
+			path="/db/changelog/role-privilege-insert.sql" dbms="h2" />
+	</changeSet>
+</databaseChangeLog>
+
