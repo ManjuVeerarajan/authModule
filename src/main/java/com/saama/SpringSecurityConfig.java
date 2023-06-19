@@ -22,7 +22,9 @@ public class SpringSecurityConfig {
 
 	@Bean
 	SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
-
+		http.authorizeRequests(auth -> auth.antMatchers("/h2-console/**").permitAll())
+				.headers(headers -> headers.frameOptions().disable())
+				.csrf(csrf -> csrf.ignoringAntMatchers("/h2-console/**"));
 		http.csrf().disable().authorizeRequests((authorize) -> {
 			authorize.anyRequest().authenticated();
 		}).httpBasic(Customizer.withDefaults());
