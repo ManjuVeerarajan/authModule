@@ -28,7 +28,7 @@ public class AuthApiController {
 
 	/**
 	 * @param id
-	 * @return Mapped privileges and roles of the given user
+	 * @return Mapped roles of the given user
 	 */
 	@GetMapping("/{id}/roles")
 	public ResponseEntity<UserRoles> getUserRoles(@PathVariable Long id) {
