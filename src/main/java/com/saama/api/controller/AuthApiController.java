@@ -32,9 +32,13 @@ public class AuthApiController {
 	 */
 	@GetMapping("/{id}")
 	public ResponseEntity<PrivilegeData> getById(@PathVariable Long id) {
-		PrivilegeData privileges = authService.getPrivileges(id);
-		if (privileges != null) {
-			return new ResponseEntity<>(privileges, HttpStatus.ACCEPTED);
+		try {
+			PrivilegeData privileges = authService.getPrivileges(id);
+			if (privileges != null) {
+				return new ResponseEntity<>(privileges, HttpStatus.ACCEPTED);
+			}
+		} catch (Exception e) {
+			logger.error(e.getMessage());
 		}
 		return null;
 	}

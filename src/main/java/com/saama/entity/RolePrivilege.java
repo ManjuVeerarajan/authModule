@@ -9,11 +9,12 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+import javax.persistence.UniqueConstraint;
 
 import lombok.Data;
 
 @Entity
-@Table(name = "ROLEPRIVILEGE")
+@Table(name = "ROLEPRIVILEGE", uniqueConstraints = { @UniqueConstraint(columnNames = { "role_id", "privilege_id" }) })
 @Data
 public class RolePrivilege {
 	@Id
