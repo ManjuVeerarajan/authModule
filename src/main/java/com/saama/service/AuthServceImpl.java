@@ -40,7 +40,7 @@ public class AuthServceImpl implements AuthService {
 			List<Long> ids = userPrivileges.stream().map(e -> e.getPrivileges().getPrivilegeId())
 					.collect(Collectors.toList());
 			List<RolePrivilege> roleDetails = roleRepo.findAllByPrivilegesPrivilegeIdIn(ids);
-			List<String> roleNames = roleDetails.stream().map(e -> e.getRoles().getRoleName())
+			List<String> roleNames = roleDetails.stream().map(e -> e.getRoles().getRoleName()).distinct()
 					.collect(Collectors.toList());
 			data.setRoles(roleNames);
 			return data;
