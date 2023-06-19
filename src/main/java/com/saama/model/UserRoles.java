@@ -9,7 +9,6 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class PrivilegeData {
-	private List<String> privileges;
+public class UserRoles {
 	private List<String> roles;
 }

@@ -2,11 +2,11 @@ package com.saama.service;
 
 import org.springframework.stereotype.Service;
 
-import com.saama.model.PrivilegeData;
+import com.saama.model.UserRoles;
 
 @Service
 public interface AuthService {
 
-	public PrivilegeData getPrivileges(Long id);
+	public UserRoles getUserRoles(Long id);
 
 }

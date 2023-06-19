@@ -10,6 +10,6 @@ import com.saama.entity.UserPrivilege;
 @Repository
 public interface UserPrivilegeRepository extends JpaRepository<UserPrivilege, Long> {
 	
-	List<UserPrivilege> findAllByUserIdUserId(Long user_id);
+	List<UserPrivilege> findAllByUsersUserId(Long user_id);
 	
 }

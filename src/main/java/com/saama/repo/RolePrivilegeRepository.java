@@ -9,5 +9,5 @@ import com.saama.entity.UserPrivilege;
 
 public interface RolePrivilegeRepository extends CrudRepository<RolePrivilege, Long> {
 
-	List<RolePrivilege> findAllByPrivilegeIdPrivilegeIdIn(List<Long> ids);
+	List<RolePrivilege> findAllByPrivilegesPrivilegeIdIn(List<Long> ids);
 }

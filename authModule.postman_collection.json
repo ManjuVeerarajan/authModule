@@ -6,19 +6,19 @@
 	},
 	"item": [
 		{
-			"name": "http://localhost:8080/roles/3003",
+			"name": "getRoles",
 			"request": {
 				"auth": {
 					"type": "basic",
 					"basic": [
 						{
 							"key": "password",
-							"value": "zzz",
+							"value": "admin",
 							"type": "string"
 						},
 						{
 							"key": "username",
-							"value": "password",
+							"value": "admin",
 							"type": "string"
 						}
 					]
@@ -26,15 +26,16 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8080/roles/3003",
+					"raw": "http://localhost:8080/user/3003/roles",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "8080",
 					"path": [
-						"roles",
-						"3003"
+						"user",
+						"3003",
+						"roles"
 					]
 				}
 			},

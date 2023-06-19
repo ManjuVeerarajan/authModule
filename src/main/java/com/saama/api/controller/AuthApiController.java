@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.saama.model.PrivilegeData;
+import com.saama.model.UserRoles;
 import com.saama.service.AuthServceImpl;
 
 /**
@@ -18,7 +18,7 @@ import com.saama.service.AuthServceImpl;
  *
  */
 @RestController
-@RequestMapping("/roles")
+@RequestMapping("/user")
 public class AuthApiController {
 
 	@Autowired
@@ -30,16 +30,16 @@ public class AuthApiController {
 	 * @param id
 	 * @return Mapped privileges and roles of the given user
 	 */
-	@GetMapping("/{id}")
-	public ResponseEntity<PrivilegeData> getById(@PathVariable Long id) {
+	@GetMapping("/{id}/roles")
+	public ResponseEntity<UserRoles> getUserRoles(@PathVariable Long id) {
 		try {
-			PrivilegeData privileges = authService.getPrivileges(id);
+			UserRoles privileges = authService.getUserRoles(id);
 			if (privileges != null) {
 				return new ResponseEntity<>(privileges, HttpStatus.ACCEPTED);
 			}
 		} catch (Exception e) {
 			logger.error(e.getMessage());
 		}
-		return null;
+		return new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
 	}
 }
