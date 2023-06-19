@@ -1,5 +1,6 @@
 package com.saama.api.controller;
 
+import org.apache.commons.collections.CollectionUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,7 +35,7 @@ public class AuthApiController {
 	public ResponseEntity<UserRoles> getUserRoles(@PathVariable Long id) {
 		try {
 			UserRoles privileges = authService.getUserRoles(id);
-			if (privileges != null) {
+			if (privileges != null && CollectionUtils.isNotEmpty(privileges.getRoles())) {
 				return new ResponseEntity<>(privileges, HttpStatus.ACCEPTED);
 			}
 		} catch (Exception e) {
